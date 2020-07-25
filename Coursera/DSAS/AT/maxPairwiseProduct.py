@@ -22,34 +22,51 @@
 n = int(input())
 a = [int(x) for x in input().split()]
 
-maxOne = -1
-maxTwo = -1
-i = 0
+def maxPairwiseProductNaive(a, n):
 
-while i < n:
+    result = 0
 
-    if maxOne < a[i]:
+    for i in range(0, n):
+        for j in range(i+1, n):
+            if a[i]*a[j] > result:
+                result = a[i]*a[j]
+
+    return result
+
+def maxPairwiseProductFast(a, n):
+
+    maxOne = -1
+    maxTwo = -1
+    i = 0
+
+    while i < n:
+
+        if maxOne < a[i]:
+            
+            if maxOne > maxTwo:
+                maxTwo = maxOne
+
+            maxOne = a[i]
+
+        elif maxTwo < a[i]:
+
+            if maxTwo > maxOne:
+                maxOne = maxTwo
+
+            maxTwo = a[i]
         
-        if maxOne > maxTwo:
-            maxTwo = maxOne
+        if (i+1) < n and maxTwo < a[i+1]:
 
-        maxOne = a[i]
+            if maxTwo > maxOne:
+                maxOne = maxTwo
 
-    elif maxTwo < a[i]:
+            maxTwo = a[i+1]
 
-        if maxTwo > maxOne:
-            maxOne = maxTwo
-
-        maxTwo = a[i]
+        i += 2
     
-    if (i+1) < n and maxTwo < a[i+1]:
+    return maxOne * maxTwo
 
-        if maxTwo > maxOne:
-            maxOne = maxTwo
-
-        maxTwo = a[i+1]
-        
-    i += 2
+result = maxPairwiseProductFast(a, n)
 
 # printing the result
-print(maxOne * maxTwo)
+print(result)
