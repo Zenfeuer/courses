@@ -22,17 +22,22 @@
 n = int(input())
 a = [int(x) for x in input().split()]
 
+# This solution is slow because it iterates and tests all posible pairs of integers, so it is O(n^2)
 def maxPairwiseProductNaive(a, n):
 
     result = 0
 
     for i in range(0, n):
         for j in range(i+1, n):
+
+            # this solution tests with each possible pair in the array
             if a[i]*a[j] > result:
                 result = a[i]*a[j]
 
     return result
 
+# This solution is better than the naive one because it finds the two greater integers in the array
+# in just one iteration of the dataset, so we can say that is O(n)
 def maxPairwiseProductFast(a, n):
 
     maxOne = -1
@@ -48,6 +53,9 @@ def maxPairwiseProductFast(a, n):
 
             maxOne = a[i]
 
+        # if a possible greater integer is found but ignored by the first case because it is still
+        # lesser than the already one stored in maxOne variable, it is needed to check if this
+        # number it is greater than the one already stored at maxTwo
         elif maxTwo < a[i]:
 
             if maxTwo > maxOne:
