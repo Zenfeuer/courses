@@ -87,13 +87,14 @@ def stressTest(size):
         randomSize = random.randint(2, size)
         testCase = random.sample(range(0, 100000), randomSize)
 
+        print(randomSize)
         print(testCase)
 
         result1 = maxPairwiseProductNaive(testCase, randomSize)
         result2 = maxPairwiseProductFast(testCase, randomSize)
 
         if result1 != result2:
-            print("Wrong answer: %d %d", result1, result2)
+            print("Wrong answer: ", result1, result2)
             break
         else:
             print("OK")
