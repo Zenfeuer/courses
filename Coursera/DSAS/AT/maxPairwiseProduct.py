@@ -27,6 +27,7 @@ def maxPairwiseProductNaive(a, n):
 
     result = 0
 
+    # this double iterations cause O(n^2)
     for i in range(0, n):
         for j in range(i+1, n):
 
@@ -74,6 +75,7 @@ def maxPairwiseProductFast(a, n):
     
     return maxOne * maxTwo
 
+# Using the fast solution
 result = maxPairwiseProductFast(a, n)
 
 # printing the result
