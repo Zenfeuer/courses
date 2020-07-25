@@ -18,6 +18,8 @@
 # 2 <= n <= 10^5
 # 0 <= a_{0}, ..., a_{n−1} <= 10^5
 
+import random
+
 # Read the input
 n = int(input())
 a = [int(x) for x in input().split()]
@@ -59,9 +61,6 @@ def maxPairwiseProductFast(a, n):
         # number it is greater than the one already stored at maxTwo
         elif maxTwo < a[i]:
 
-            if maxTwo > maxOne:
-                maxOne = maxTwo
-
             maxTwo = a[i]
         
         if (i+1) < n and maxTwo < a[i+1]:
@@ -71,12 +70,39 @@ def maxPairwiseProductFast(a, n):
 
             maxTwo = a[i+1]
 
+        # Same here
+        elif (i+1) < n and maxOne < a[i+1]:
+
+            maxOne = a[i+1]
+
         i += 2
     
     return maxOne * maxTwo
+
+# Method to stress testing the solution and ensure that everything works as expected
+def stressTest(size):
+
+    while True:
+
+        randomSize = random.randint(2, size)
+        testCase = random.sample(range(0, 100000), randomSize)
+
+        print(testCase)
+
+        result1 = maxPairwiseProductNaive(testCase, randomSize)
+        result2 = maxPairwiseProductFast(testCase, randomSize)
+
+        if result1 != result2:
+            print("Wrong answer: %d %d", result1, result2)
+            break
+        else:
+            print("OK")
 
 # Using the fast solution
 result = maxPairwiseProductFast(a, n)
 
 # printing the result
 print(result)
+
+# Stress testing the solution
+#stressTest(n)
