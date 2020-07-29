@@ -1,3 +1,6 @@
+#!/bin/python3
+#d2
+
 def gcd(a, b):
 
     if b == 0:

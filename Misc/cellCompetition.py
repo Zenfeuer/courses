@@ -1,12 +1,12 @@
 #!/bin/python3
-
 #d1
 
 def cellCompetition(states, days):
 
     n = len(states)
+    i = 0
 
-    for i in range(days):
+    while i < days: 
         for j in range(n):
 
             neighborL = 0
@@ -24,6 +24,8 @@ def cellCompetition(states, days):
                 states[j] = 0
             else:
                 states[j] = 1
+        
+        i += 1
 
     return states
 
