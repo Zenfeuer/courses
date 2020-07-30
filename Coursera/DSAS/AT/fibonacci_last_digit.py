@@ -66,10 +66,6 @@ def stressTest(n):
             print("OK")
 
 # Stress testing
-stressTest(n)
+#stressTest(n)
 
-# Call fast solution
-#result = fibonacciFast(n)
-
-# Print result
-#print(result)
+print(lastDigitFibFast(n))
