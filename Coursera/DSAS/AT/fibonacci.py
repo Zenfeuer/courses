@@ -10,9 +10,7 @@
 
 import random
 
-n = int(input())
-
-# Recursive version that is slow
+# Recursive version that is slow because it calculates some same cases several times
 def fibonacciNaive(n):
 
     if n <= 1:
@@ -20,7 +18,7 @@ def fibonacciNaive(n):
     else:
         return fibonacciNaive(n-1) + fibonacciNaive(n-2)
 
-# Iterative version that is faster
+# Iterative version that is faster because each case is calculated once
 def fibonacciFast(n):
 
     if n <= 1:
@@ -58,6 +56,8 @@ def stressTest(n):
             break
         else:
             print("OK")
+
+n = int(input())
 
 # Stress testing
 #stressTest(n)
