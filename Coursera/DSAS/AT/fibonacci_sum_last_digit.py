@@ -124,7 +124,6 @@ def lastDigitSumFibNumberFast(n):
 
     return result
 
-
 # Stress testing both solutions
 def stressTest(n):
 
