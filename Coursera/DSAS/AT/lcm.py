@@ -34,9 +34,11 @@ def gcd(a, b):
     
     return gcd(b, a%b)
 
+# Fast solution
 def lcm(a, b):
     return a*b//gcd(a, b)
 
+# Stress testing both solutions
 def stressTest():
 
     n = int(input())
@@ -57,9 +59,8 @@ def stressTest():
         else:
             print("OK")
 
-params = [int(x) for x in input().split()]
-
 #Stress Testing
 #stressTest()
 
+params = [int(x) for x in input().split()]
 print(lcm(params[0], params[1]))

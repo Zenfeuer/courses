@@ -17,7 +17,7 @@
 # F(m+3) = F(m+2) + F(m+1) => F(m+1) = F(m+3) - F(m+2)
 # F(m+2) = F(m+1) + F(m)   => F(m)   = F(m+2) - F(m+1)
 #
-# Now, F(n-1) + F(n-2) + ... + F(m+1) + F(m) = F(n+1) - F(m+1) = S(n-1, m)
+# Now, F(n-1) + F(n-2) + ... + F(m+1) + F(m) = F(n+1) - F(m+1) = S(m,n-1)
 # Then, for n, the serie is S(n) = F(n+2) - F(m+1)
 #
 # Input:    two integers n and m; 0 <= m <= n <= 10^18
@@ -26,8 +26,7 @@
 import random
 
 
-# Iterative version that is faster because each case is calculated once. Now this is going to be our
-# naive solution.
+# Iterative version. Now this is going to be our naive solution.
 def partialSumFibNumbersNaive(m, n):
 
     if n <= 1:

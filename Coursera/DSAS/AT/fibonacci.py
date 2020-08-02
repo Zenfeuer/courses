@@ -63,7 +63,4 @@ n = int(input())
 #stressTest(n)
 
 # Call fast solution
-result = fibonacciFast(n)
-
-# Print result
-print(result)
+print(fibonacciFast(n))

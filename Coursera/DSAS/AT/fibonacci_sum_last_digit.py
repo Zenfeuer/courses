@@ -25,8 +25,7 @@
 import random
 
 
-# Iterative version that is faster because each case is calculated once. Now this is going to be our
-# naive solution.
+# Iterative version. Now this is going to be our naive solution.
 def lastDigitSumFibNumberNaive(n):
 
     if n <= 1:
