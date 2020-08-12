@@ -8,8 +8,10 @@
 # That is, find a set of integers X of the minimum size such that for any segment [a_i, b_i] there 
 # is a point x belongs to X such that a_i <= x <= b_i.
 #
-# Input:    
-# Output:   
+# Input:    integer n;          1 <= n <= 100
+#           integers a_i, b_i;  0 <= a_i <= b_i <= 10^9 for all 0 <= i < n
+# Output:   integer m;      minimum number of points
+#           integers x_i;   the integer coordinates of m points (separated by spaces)
 
 import random
 
