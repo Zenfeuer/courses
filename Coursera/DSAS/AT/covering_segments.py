@@ -33,6 +33,7 @@ def coveringSegments(points):
 # Stress testing both solutions
 #TODO
 
+# Reading the input
 n = int(input())
 points = []
 
