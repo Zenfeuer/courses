@@ -19,7 +19,6 @@ import random
 # Read the input
 n = int(input())
 
-# This solution is slow because it iterates and tests all posible pairs of integers, so it is O(n^2)
 def pairwiseDistanctSum(n):
 
     pairs = []
